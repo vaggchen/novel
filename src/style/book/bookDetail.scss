@@ -1,0 +1,334 @@
+.bookDetail{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    // margin-bottom: 4rem;
+    .content{//书单详情内容
+        width: 96%;
+        // height: 40rem;
+        margin: 0 auto;
+        // margin-top: 1.7rem;
+        // background-color: rgb(240, 222, 237);
+        // position: absolute;
+        // top: 2.4rem;
+        // left: 0;
+        padding-top: .5rem;
+        margin-bottom: 2rem;
+        .tt{
+            height: 1.5rem;
+            width: 100%;
+            // background-color: rgb(223, 247, 237);
+            line-height: 1.5rem;
+            text-align: left;
+            box-sizing: border-box;
+            padding-left: .5rem;
+            font-size: .8rem;
+            font-weight: bold;
+            color: rgb(46, 45, 45);
+        }
+        .up{
+            width: 100%;
+            margin-bottom: 1.5rem;
+            height: 14rem;
+            // background-color: rgb(247, 183, 183);
+            .hi_up{
+                width: 100%;
+                height: 14rem;
+                dl{
+                    width: 100%;
+                    height: 14rem;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    // background-color: rgb(243, 117, 117);
+                    dt{
+                        width: 9rem;
+                        height: 13rem;
+                        // border-radius: 50%;
+                        .bl_img{
+                            width: 100% !important;
+                            height: 100% !important;
+                            border-radius: 5px;
+                            overflow: hidden;
+                            // background-color: rgb(192, 180, 180);
+                        }
+                    }
+                    dd{
+                        width: 60%;
+                        height: 13rem;
+                        display: flex;
+                        flex-direction: column;
+                        flex-wrap: wrap;
+                        justify-content: space-around;
+                        align-items: center;
+                        // background-color: rgb(112, 109, 109);
+                        .info{
+                            width: 85%;
+                            height: 1.5rem;
+                            line-height: 1.5rem;
+                            text-align: left;
+                            font-size: .7rem;
+                            color: #333;
+                            // background-color: #9299e4;
+                            span{
+                                height: 1.5rem;
+                                line-height: 1.5rem;
+                                text-align: left;  
+                                font-size: .8rem;
+                                color: rgb(87, 86, 85);
+                            }
+                            &:first-child{
+                                span{
+                                     color: #333;
+                                     font-weight: bold;
+                                     margin-right: .2rem;
+                                }
+                            }
+                            &:nth-child(2){
+                                span{
+                                     color: rgb(241, 70, 70);
+                                }
+                            }
+                            &:nth-child(3){
+                                min-height: 3rem;
+                                display: flex;
+                                justify-content: flex-start;
+                                flex-wrap: wrap;
+                                // align-items: center;
+                                overflow: hidden;
+                                span{
+                                    font-size: .5rem;
+                                    height: .8rem;
+                                    line-height: .8rem;
+                                    background-color: rgb(250, 212, 212);
+                                    border-radius: 5px;
+                                    margin: .2rem .2rem;
+                                    padding: 0 .3rem;
+                                    border: 1px solid rgb(145, 144, 144);
+                                }
+                            }
+                            &:nth-child(4){
+                                span{
+                                    font-size: .7rem;
+                                    &:nth-child(2){
+                                        padding: 0 .5rem
+                                    }
+                                }
+                            }
+                            &:nth-child(5){
+                                span{
+                                    color: rgb(241, 70, 70);
+                                }
+                            }
+                        }
+                        .dd_action{
+                            width: 85%;
+                            margin: 0 auto;
+                            height: 2rem;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            // background-color: rgb(199, 154, 154);
+                            .btn{
+                                width: 45%;
+                                height: 1.5rem;
+                                text-align: center;
+                                border-radius: 5px;
+                                span{
+                                    font-size: .6rem;
+                                    line-height: 1.5rem;
+                                    color: rgb(82, 81, 81);
+                                }
+                                &:nth-child(1){
+                                    background-color: rgb(173, 224, 240);
+                                    border: 1px solid rgb(66, 195, 235);
+                                }
+                                &:nth-child(2){
+                                    background-color: rgb(245, 197, 166);
+                                    border: 1px solid rgb(236, 153, 84);
+                                }
+                                &:nth-child(3){
+                                    background-color: rgb(207, 243, 171);
+                                    border: 1px solid rgb(112, 238, 95);
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+        .center{
+            width: 100%;
+            .menu{
+                height: 1.2rem;
+                width: 100%;
+                background-color: rgb(243, 233, 224);
+                p{
+                    width: 100%;
+                    height: 100%;
+                    line-height: 1.2rem;
+                    box-sizing: border-box;
+                    padding-left: .5rem;
+                    font-size: .7rem;
+                    color: rgb(83, 83, 83);
+                }
+                &:hover{
+                    background-color: rgb(228, 210, 195);      
+                }
+            }
+            .params{
+                height: 4rem;
+                width: 100%;
+                // background-color: rgb(224, 101, 101);
+                ul{
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    // flex-wrap: wrap;
+                    align-items: center;
+                    // background-color: #9299e4;
+                    li{
+                        
+                        height:3rem;
+                        // line-height: 4rem;
+                        div{
+                            font-size: .7rem;
+                            color: rgb(63, 52, 52);
+                            h4{
+                                font-size: .7rem;
+                                color: rgb(63, 52, 52);
+                                width: 100%;
+                                height: 1rem;
+                                line-height: 1rem;
+                            }
+                            span{
+                                display: block;
+                                width: 100%;
+                                height: 2rem;
+                                line-height: 1rem;
+                                font-size: .6rem;
+                                color: #666;
+                            }
+                        }
+                        &:last-child{
+                            width: 4rem
+                        }
+                    }
+                }
+            }
+            .bookdesc{
+                width: 100%;
+                .desc{
+                    width: 96%;
+                    margin: 0 2%;
+                    // background-color: rgb(180, 147, 147);
+                    // height: 6rem;
+                    font-size: .7rem;
+                    font-weight: bold;
+                    line-height: 1.5rem;
+                    color: #666;
+                    p{
+                        font-size: .7rem;
+                        color: #666;
+                        line-height: 1.2rem;
+                    }
+                }
+            }
+        }
+    
+        .down{
+            width: 100%;
+            margin-bottom: .5rem;
+            display: flex;
+            // justify-content: space-around;
+    
+            flex-wrap: wrap;
+            align-items: center;
+            // height: 7rem;
+            .bookItem{
+                width: 40%;
+                margin-left: 6.5%;
+                height: 13rem;
+                margin-bottom: .5rem;
+                border: 1px solid #ccc;
+                dl{
+                    width: 100%;
+                    height: 13rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-items: center;
+                    dt{
+                        width: 5rem;
+                        height: 6rem;
+                        .bl_img{
+                            width: 100% !important;
+                            height: 100% !important;
+                        }
+                    }
+                    dd{
+                        width: 100%;
+                        height: 6rem;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        align-items: center;
+                        p{
+                            height: 1.2rem;
+                            line-height: 1.2rem;
+                            text-align: left;
+                            font-size: .7rem;
+                            color: rgb(252, 93, 93);
+                            span{
+                                // display: block;
+                                // width: 100%;
+                                height: 1.1rem;
+                                line-height: 1.1rem;
+                                text-align: left;  
+                                font-size: .6rem;
+                                color: rgb(82, 80, 80);
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                display: -webkit-box;
+                                -webkit-line-clamp: 1;
+                                -webkit-box-orient: vertical;
+                                // color: rgb(82, 80, 80);
+                            }
+                            &:nth-child(1){
+                                span{
+                                    font-weight: bold;
+                                }
+                            }
+                            &:nth-child(4){
+                                span{
+                                    display: block;
+                                    background-color: rgb(250, 235, 216);
+                                    color: rgb(235, 82, 35);
+                                    border-radius: .5rem;
+                                    text-align: center;
+                                    width: 3rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .alert{
+                width: 100%;
+                height: 1rem;
+                line-height: 1rem;
+                font-size: .7rem;
+                text-align: center;
+                color: rgb(133, 129, 129);
+            }
+        }
+       
+    }
+    .empty{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+}

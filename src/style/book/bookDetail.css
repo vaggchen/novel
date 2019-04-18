@@ -1,0 +1,339 @@
+.bookDetail {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.bookDetail .content {
+  width: 96%;
+  margin: 0 auto;
+  padding-top: .5rem;
+  margin-bottom: 2rem;
+}
+
+.bookDetail .content .tt {
+  height: 1.5rem;
+  width: 100%;
+  line-height: 1.5rem;
+  text-align: left;
+  box-sizing: border-box;
+  padding-left: .5rem;
+  font-size: .8rem;
+  font-weight: bold;
+  color: #2e2d2d;
+}
+
+.bookDetail .content .up {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  height: 14rem;
+}
+
+.bookDetail .content .up .hi_up {
+  width: 100%;
+  height: 14rem;
+}
+
+.bookDetail .content .up .hi_up dl {
+  width: 100%;
+  height: 14rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bookDetail .content .up .hi_up dl dt {
+  width: 9rem;
+  height: 13rem;
+}
+
+.bookDetail .content .up .hi_up dl dt .bl_img {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.bookDetail .content .up .hi_up dl dd {
+  width: 60%;
+  height: 13rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bookDetail .content .up .hi_up dl dd .info {
+  width: 85%;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  text-align: left;
+  font-size: .7rem;
+  color: #333;
+}
+
+.bookDetail .content .up .hi_up dl dd .info span {
+  height: 1.5rem;
+  line-height: 1.5rem;
+  text-align: left;
+  font-size: .8rem;
+  color: #575655;
+}
+
+.bookDetail .content .up .hi_up dl dd .info:first-child span {
+  color: #333;
+  font-weight: bold;
+  margin-right: .2rem;
+}
+
+.bookDetail .content .up .hi_up dl dd .info:nth-child(2) span {
+  color: #f14646;
+}
+
+.bookDetail .content .up .hi_up dl dd .info:nth-child(3) {
+  min-height: 3rem;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.bookDetail .content .up .hi_up dl dd .info:nth-child(3) span {
+  font-size: .5rem;
+  height: .8rem;
+  line-height: .8rem;
+  background-color: #fad4d4;
+  border-radius: 5px;
+  margin: .2rem .2rem;
+  padding: 0 .3rem;
+  border: 1px solid #919090;
+}
+
+.bookDetail .content .up .hi_up dl dd .info:nth-child(4) span {
+  font-size: .7rem;
+}
+
+.bookDetail .content .up .hi_up dl dd .info:nth-child(4) span:nth-child(2) {
+  padding: 0 .5rem;
+}
+
+.bookDetail .content .up .hi_up dl dd .info:nth-child(5) span {
+  color: #f14646;
+}
+
+.bookDetail .content .up .hi_up dl dd .dd_action {
+  width: 85%;
+  margin: 0 auto;
+  height: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bookDetail .content .up .hi_up dl dd .dd_action .btn {
+  width: 45%;
+  height: 1.5rem;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.bookDetail .content .up .hi_up dl dd .dd_action .btn span {
+  font-size: .6rem;
+  line-height: 1.5rem;
+  color: #525151;
+}
+
+.bookDetail .content .up .hi_up dl dd .dd_action .btn:nth-child(1) {
+  background-color: #ade0f0;
+  border: 1px solid #42c3eb;
+}
+
+.bookDetail .content .up .hi_up dl dd .dd_action .btn:nth-child(2) {
+  background-color: #f5c5a6;
+  border: 1px solid #ec9954;
+}
+
+.bookDetail .content .up .hi_up dl dd .dd_action .btn:nth-child(3) {
+  background-color: #cff3ab;
+  border: 1px solid #70ee5f;
+}
+
+.bookDetail .content .center {
+  width: 100%;
+}
+
+.bookDetail .content .center .menu {
+  height: 1.2rem;
+  width: 100%;
+  background-color: #f3e9e0;
+}
+
+.bookDetail .content .center .menu p {
+  width: 100%;
+  height: 100%;
+  line-height: 1.2rem;
+  box-sizing: border-box;
+  padding-left: .5rem;
+  font-size: .7rem;
+  color: #535353;
+}
+
+.bookDetail .content .center .menu:hover {
+  background-color: #e4d2c3;
+}
+
+.bookDetail .content .center .params {
+  height: 4rem;
+  width: 100%;
+}
+
+.bookDetail .content .center .params ul {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bookDetail .content .center .params ul li {
+  height: 3rem;
+}
+
+.bookDetail .content .center .params ul li div {
+  font-size: .7rem;
+  color: #3f3434;
+}
+
+.bookDetail .content .center .params ul li div h4 {
+  font-size: .7rem;
+  color: #3f3434;
+  width: 100%;
+  height: 1rem;
+  line-height: 1rem;
+}
+
+.bookDetail .content .center .params ul li div span {
+  display: block;
+  width: 100%;
+  height: 2rem;
+  line-height: 1rem;
+  font-size: .6rem;
+  color: #666;
+}
+
+.bookDetail .content .center .params ul li:last-child {
+  width: 4rem;
+}
+
+.bookDetail .content .center .bookdesc {
+  width: 100%;
+}
+
+.bookDetail .content .center .bookdesc .desc {
+  width: 96%;
+  margin: 0 2%;
+  font-size: .7rem;
+  font-weight: bold;
+  line-height: 1.5rem;
+  color: #666;
+}
+
+.bookDetail .content .center .bookdesc .desc p {
+  font-size: .7rem;
+  color: #666;
+  line-height: 1.2rem;
+}
+
+.bookDetail .content .down {
+  width: 100%;
+  margin-bottom: .5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.bookDetail .content .down .bookItem {
+  width: 40%;
+  margin-left: 6.5%;
+  height: 13rem;
+  margin-bottom: .5rem;
+  border: 1px solid #ccc;
+}
+
+.bookDetail .content .down .bookItem dl {
+  width: 100%;
+  height: 13rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bookDetail .content .down .bookItem dl dt {
+  width: 5rem;
+  height: 6rem;
+}
+
+.bookDetail .content .down .bookItem dl dt .bl_img {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.bookDetail .content .down .bookItem dl dd {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bookDetail .content .down .bookItem dl dd p {
+  height: 1.2rem;
+  line-height: 1.2rem;
+  text-align: left;
+  font-size: .7rem;
+  color: #fc5d5d;
+}
+
+.bookDetail .content .down .bookItem dl dd p span {
+  height: 1.1rem;
+  line-height: 1.1rem;
+  text-align: left;
+  font-size: .6rem;
+  color: #525050;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.bookDetail .content .down .bookItem dl dd p:nth-child(1) span {
+  font-weight: bold;
+}
+
+.bookDetail .content .down .bookItem dl dd p:nth-child(4) span {
+  display: block;
+  background-color: #faebd8;
+  color: #eb5223;
+  border-radius: .5rem;
+  text-align: center;
+  width: 3rem;
+}
+
+.bookDetail .content .down .alert {
+  width: 100%;
+  height: 1rem;
+  line-height: 1rem;
+  font-size: .7rem;
+  text-align: center;
+  color: #858181;
+}
+
+.bookDetail .empty {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}

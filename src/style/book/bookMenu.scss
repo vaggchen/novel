@@ -1,0 +1,60 @@
+.bookMenu{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    span{ 
+        position: fixed;
+        right: 1rem;
+        display: block;
+        width: 1.5rem;
+        height: 1.5rem;
+        background: rgba($color: #1b1b1b, $alpha: .4);
+        color: rgb(238, 232, 232);
+        font-size: .7rem;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 1.5rem;
+        z-index: 9999;
+        &:nth-child(1){
+            top: 3rem;
+        }
+        &:nth-child(2){ 
+            top: 6rem;
+        }
+    }
+    .content{//书单详情内容
+        width: 100%;
+        // height: 40rem;
+        padding: 0 2%;
+        box-sizing: border-box;
+        background-color: #EEE;
+        // margin-bottom: 2rem;
+        ul{
+            width: 100%;
+            li{
+                width: 100%;
+                
+                line-height: 2rem;
+                border-bottom: 1px solid #D6D6D6;
+                a{
+                  display: inline-block;
+                  height: 1.2rem;
+                  line-height: 1.2rem;  
+                  font-size: .7rem;
+                  color: #333333;
+                }
+                &.actived{
+                    a{
+                        color: red
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+.empty{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}

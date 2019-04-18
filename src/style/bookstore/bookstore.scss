@@ -1,0 +1,94 @@
+.bookstore{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #fff;
+    .head{
+        height: 3rem;
+        width: 100%;
+        background-color: rgb(253, 238, 219);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: #666666;
+        
+        letter-spacing: .2rem;
+        .left,.right{
+            width: 6rem;
+            height: 3rem;
+            text-align: center;
+            line-height: 3rem;
+            letter-spacing: .1rem;
+            i{
+                
+                margin-right: .2rem;
+            }
+        }
+        .center{
+            font-size: 1rem;
+        }
+    }
+    .content{
+        width: 96%;
+        margin: 0 2%;
+        // width: 100%;
+        // height: 27.5rem;
+        // max-height: 100%;
+        overflow: auto;
+        .bookItem, .swipe-wrapper{
+            width: 100%;
+            height: 100%;
+            // box-sizing: border-box;
+            // margin-bottom: 3rem;
+            .swipe_item{
+                width: 100%;
+                // height: 5rem;
+                background-color: rgb(219, 219, 212);
+                margin-top: .5rem;
+                box-sizing: border-box;
+                padding: .5rem;
+                // box-shadow: 5px 5px 5px #999;
+                .item-inner{
+                    width: 100%;
+                    height: 90%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .icon{
+                        width: 20%;
+                        height: 4rem;
+                    }
+                    .text{
+                        width: 80%;
+                        text-align: left;
+                        padding-left: 1rem;
+                        .item-name{
+                            height: 2rem;
+                            line-height: 2rem;
+                            text-align: left;
+                            font-size: .8rem;
+                            font-weight: bold;
+                        }
+                        p{
+                            height: 1.2rem;
+                            line-height: 1.2rem;
+                            text-align: left;
+                            font-size: .6rem;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 1;
+                            -webkit-box-orient: vertical;
+                        }
+                    }
+                }
+            }
+        }
+        .emptyshow{
+            width: 100%;
+            height: 100%;
+            // background: #eeebdc;
+            
+        }
+    }
+}

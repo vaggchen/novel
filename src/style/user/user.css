@@ -1,0 +1,207 @@
+.user {
+  width: 100%;
+  height: 100%;
+}
+
+.user .head {
+  height: 3rem;
+  width: 100%;
+  background-color: #faf8f6;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #666666;
+  border-bottom: 2px solid #333;
+  letter-spacing: .2rem;
+}
+
+.user .head .left, .user .head .right {
+  width: 6rem;
+  height: 3rem;
+  text-align: center;
+  line-height: 3rem;
+  letter-spacing: .1rem;
+}
+
+.user .head .left i, .user .head .right i {
+  margin-right: .2rem;
+}
+
+.user .head .center {
+  font-size: 1rem;
+}
+
+.user .content {
+  width: 96%;
+  margin: 0 2%;
+  height: 27.5rem;
+  overflow: auto;
+}
+
+.user .content .userInfo {
+  width: 100%;
+  height: 6rem;
+  margin: .5rem 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.user .content .userInfo dl {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  padding-top: .7rem;
+}
+
+.user .content .userInfo dl dt {
+  width: 23%;
+  height: 4.5rem;
+  background-color: #fff;
+  border: 1px solid #e9e7e7;
+}
+
+.user .content .userInfo dl dt img {
+  width: 100%;
+  height: 100%;
+}
+
+.user .content .userInfo dl dt i {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 2rem;
+  text-align: center;
+  line-height: 4.5rem;
+  color: #666666;
+}
+
+.user .content .userInfo dl dd {
+  width: 62%;
+  height: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding-left: 1rem;
+}
+
+.user .content .userInfo dl dd div {
+  width: 100%;
+  height: 1.5rem;
+  font-size: .7rem;
+  color: #666666;
+  line-height: 1.5rem;
+}
+
+.user .content .userInfo dl dd div .age {
+  box-sizing: border-box;
+  padding-top: .5rem;
+  line-height: 1rem;
+}
+
+.user .content .userInfo dl dd div .age span {
+  display: block;
+  font-size: .6rem;
+}
+
+.user .content .userInfo dl dd .unlog {
+  width: 100%;
+  color: #666666;
+}
+
+.user .content .userInfo dl dd .unlog span {
+  display: block;
+  font-size: .7rem;
+  width: 4rem;
+  height: 1.2rem;
+  border: 1px solid #666;
+  border-radius: .5rem;
+  text-align: center;
+  line-height: 1.2rem;
+  margin-top: .4rem;
+}
+
+.user .content .accountSafe {
+  width: 100%;
+  height: 2rem;
+  margin-bottom: .5rem;
+  background-color: #f4f5f7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user .content .accountSafe span {
+  width: 50%;
+  height: 100%;
+  line-height: 2rem;
+  font-size: .9rem;
+  color: #666;
+  box-sizing: border-box;
+  padding-left: 1rem;
+}
+
+.user .content .accountSafe i {
+  width: 10%;
+  font-size: .7rem;
+  color: #818080;
+}
+
+.user .content .myInfo {
+  width: 100%;
+  height: 8rem;
+  margin-bottom: 2rem;
+  background-color: #f3f4f5;
+}
+
+.user .content .myInfo .myInfoItem {
+  width: 100%;
+  height: 2rem;
+  background-color: #f4f4f5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.user .content .myInfo .myInfoItem span {
+  width: 50%;
+  height: 100%;
+  line-height: 2rem;
+  font-size: .9rem;
+  color: #666;
+  box-sizing: border-box;
+  padding-left: 1rem;
+}
+
+.user .content .myInfo .myInfoItem i {
+  width: 10%;
+  font-size: .7rem;
+  color: #818080;
+}
+
+.user .content .myInfo .myInfoItem:last-child {
+  border: none;
+}
+
+.user .content .logout {
+  width: 100%;
+  height: 2rem;
+  margin-bottom: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user .content .logout .out {
+  width: 12rem;
+  height: 2rem;
+  background-color: #636262;
+  line-height: 2rem;
+  text-align: center;
+  font-size: .9rem;
+  color: #fdfcfc;
+  border: 1px solid #aaa7a7;
+  border-radius: .6rem;
+}

@@ -1,0 +1,316 @@
+// .com_topNav{
+//     display: none;
+// }
+.chapterDetail{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    
+    // margin-top: -1rem;
+    line-height: 1.5rem;
+    // background-color: blanchedalmond;
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    .content{
+        height: 100%;
+        overflow: auto;
+        .title{
+            font-size: 1rem;
+            line-height: 1.5rem;
+            color: #999
+        }
+        .novelRead{
+            letter-spacing: -2px;
+            box-sizing: border-box;
+            padding: 0 .5rem;
+            p{
+                margin: .5rem 0;
+            }
+            
+        }
+        .picturesRead{
+            width: 100%;
+            .pictures{
+                width: 100%;
+                height: 30rem;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+        }
+    }
+    .chapterTitle{
+        height: 1.5rem;
+        line-height: .6rem;
+        font-size: .4rem;
+        width: 100%;
+        position: fixed;
+        top: 0rem;
+        left: 0;
+        background-color: rgb(248, 163, 114);
+        .menu{
+            width: 1.5rem;
+            height: 1rem;
+            .menubtn{
+                width: 1.5rem;
+                height: 1rem;
+                background-color: none;
+                font-size: .4rem;
+                text-align: left;
+                line-height: 1rem;
+            }
+            
+        }
+        .title{
+            width: 10rem;
+            height: 1rem;;
+        }
+    }
+    #menuList{
+        // display: none;
+        position: absolute;
+        top: 0rem;
+        left: 0;
+        width: 10rem;
+        height: 100%;
+        overflow-y:auto;
+        background-color: #f9f9f9;
+        display: block;
+        z-index: 888;
+        ul{
+            width: 100%;
+            li{
+                color: #333;
+                width: 100%;
+                overflow: hidden;
+                font-size: .6rem;
+                line-height: 1.2rem;
+                text-align: left;
+                text-indent: .5rem;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                border-bottom: 1px dashed #ccc;
+                &.actived{
+                    color: red
+                }
+            }
+        }
+        &.isGray{
+            background-color: #aaa
+        }
+        span{ 
+            position: fixed;
+            left: 8rem;
+            display: block;
+            width: 1.5rem;
+            height: 1.5rem;
+            background: rgba($color: #1b1b1b, $alpha: .4);
+            color: rgb(238, 232, 232);
+            font-size: .7rem;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 1.5rem;
+            z-index: 9999;
+            &:nth-child(1){
+                top: 3rem;
+            }
+            &:nth-child(2){ 
+                top: 3rem;
+            }
+        }
+    }
+
+    //隐藏的div
+    .fixedDiv{
+        position: fixed;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: 0.3);
+        z-index:888;
+        
+        .botTool{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2.2rem;
+            width: 100%;
+            background-color: #fff;
+
+            display: flex;
+            justify-content: space-between;
+            // line-height: 2rem;
+            align-items: center;
+            font-size: .6rem;
+            div{
+                display: flex;
+                justify-content: space-between;
+                // line-height: 2rem;
+                align-items: center;
+                flex-wrap: wrap;
+                // padding: 0 .5rem;
+                p{  
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                    color: #333;
+                    line-height: .9rem;
+                    font-size: .6rem;
+                }
+            }
+            
+        }
+        #setting{
+            position: absolute;
+            bottom: 2.2rem;
+            left: 0;   
+            width: 100%;
+            background-color: #fff;
+            box-sizing: border-box;
+            padding: 0 .5rem;
+            color: #333;
+            
+            border-bottom: 1px dashed #ccc;
+            >div{
+                // overflow: hidden;
+                margin-bottom: .5rem;
+                &:last-child{
+                    
+                }
+            }
+            .colorSelect{
+                display: flex;
+                justify-content: space-between;
+                span{
+                    display: inline-block;
+                    width: 1.5rem;
+                    height:1.5rem;
+                    border-radius: 1.5rem;
+                    overflow: hidden;
+                    input{
+                        width: 2rem;
+                        height:2rem;
+                        margin-bottom: 0;
+                        border: none;
+                        outline: none;
+                        padding: 1.2rem 1.2rem;
+                        
+                        box-sizing: border-box;
+                         /* Safari 5.1 - 6.0 */
+                        background: -webkit-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);
+                        /* Opera 11.1 - 12.0 */
+                        background: -o-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);
+                        /* Firefox 3.6 - 15 */
+                        background: -moz-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);
+                        /* 标准的语法 */
+                        background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+                    }
+                }
+            }
+            .mid{
+                margin: 0 auto;
+                
+                text-align: center
+            }
+            .mid2{
+                margin: 0 2rem;
+                padding-right: 0;
+                clear: none;
+            }
+            .btn{
+                width: 2rem;
+                text-align: center;
+                border: 1px solid #333;
+                border-radius: 5px
+            }
+            .tooltip{
+                font-size: .5rem;
+                padding: 0 .2rem;
+                line-height: 2rem;
+                position: absolute;
+                z-index: 888;
+                top: -2.5rem;
+                min-width: 1px;
+                height: 2rem;
+                text-align: center;
+                opacity: .9;
+                color: #333;
+                border: 1px solid #ddd;
+                border-radius: 6px;
+                background-color: #fff;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 60%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                // box-shadow: .2rem .3rem .2rem #f3f3f3;
+                // text-shadow: .2rem .3rem .2rem #f3f3f3;
+            }
+        }
+        
+    }
+    #changeReasource{
+        position: fixed;
+        top: 20%;
+        left: 20%;   
+        width: 60%;
+        height: 60%;
+        background-color: #999;
+        border-radius: 5px;
+        color: #333;
+        z-index: 999;
+        overflow: auto;
+        ul{
+            padding: 0 .5rem;
+            li{
+                line-height: 2rem;
+                text-indent: .5rem;
+                border-bottom: 1px solid #ccc
+            }
+        }
+    }
+}
+.isDark{
+    background-color: rgba($color: #000000, $alpha: 0.9);
+    color: #eee
+}
+
+.white{
+    background-color: #EAEAEF !important;
+}
+.lightgreen{
+    background-color: #C7EDCC !important;
+}
+.deepyellow{
+    background-color: #FFF2E2 !important;
+}
+.other{
+    background-color: #eee;
+}
+.mui-off-canvas-left{
+    background-color: #fff;
+    .mui-scroll{
+        background-color: #eee;
+        li{
+                color: #333;
+                width: 100%;
+                overflow: hidden;
+                font-size: .6rem;
+                line-height: 1.2rem;
+                text-align: left;
+                text-indent: .5rem;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                // border-bottom: 1px dashed #ccc;
+                &.actived{
+                    color: red
+                }
+            
+        }
+    }
+}

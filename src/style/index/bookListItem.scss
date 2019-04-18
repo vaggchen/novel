@@ -1,0 +1,234 @@
+.bookListInfo{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+.content{//书单详情内容
+    width: 100%;
+    // height: 40rem;
+    box-sizing: border-box;
+    padding: 0 .5rem;
+    // margin-top: 1.7rem;
+    // background-color: rgb(240, 222, 237);
+    // position: absolute;
+    // top: 2.4rem;
+    // left: 0;
+    .tt{
+        height: 1.5rem;
+        width: 100%;
+        // background-color: rgb(223, 247, 237);
+        line-height: 1.5rem;
+        text-align: left;
+        box-sizing: border-box;
+        padding-left: 0;
+        font-size: .8rem;
+        font-weight: bold;
+        color: rgb(46, 45, 45);
+        margin: 0.5rem 0;
+        position: relative;
+        &:after{
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: -.1rem;
+            width: 3.5rem;
+            height: 1px;
+            background-color: #333
+        }
+    }
+    
+    
+    .up{
+        width: 100%;
+        margin-bottom: .5rem;
+        height: 5rem;
+        .hi_up{
+            width: 100%;
+            height: 5rem;
+            dl{
+                width: 100%;
+                height: 5rem;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                dt{
+                    width: 4rem;
+                    height: 4rem;
+                    border-radius: 50%;
+                    .bl_img{
+                        border-radius: 50%;
+                        width: 100% !important;
+                        height: 100% !important;
+                    }
+                }
+                dd{
+                    width: 60%;
+                    height: 80%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    // align-items: center;
+                    p{
+                        height: 1.5rem;
+                        line-height: 1.5rem;
+                        text-align: left;
+                        font-size: .8rem;
+                        color: #333;
+                        span{
+                            height: 1.5rem;
+                            line-height: 1.5rem;
+                            text-align: left;  
+                            font-size: .7rem;
+                            color: rgb(247, 123, 8);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .center{
+        width: 100%;
+        .params{
+            height: 2rem;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #999;
+            ul{
+                height: 100%;
+                width: 100%;
+                padding: 0 0.5rem;
+                box-sizing: border-box;
+                display: flex;
+                justify-content: space-between;
+                // flex-wrap: wrap;
+                align-items: center;
+                // background-color: #9299e4;
+                li{
+                    height:2rem;
+                    line-height: 2rem;
+                    div{
+                        font-size: .7rem;
+                        color: rgb(63, 52, 52);
+                        span{
+                            margin-left: .2rem;
+                            font-size: .8rem;
+                            color: #ff6666;
+                        }
+                    }
+                }
+            }
+        }
+        .bookdesc{
+            width: 100%;
+            .desc{
+                width: 100%;
+                box-sizing: border-box;
+                padding: 0 .5rem;
+                // background-color: rgb(180, 147, 147);
+                // height: 6rem;
+                font-size: .7rem;
+                font-weight: bold;
+                line-height: 1.2rem;
+                color: #999;
+                // min-height: 2rem;
+                // font-size: .7rem;
+                // color: #666;
+                // line-height: 1.2rem;
+            }
+        }
+    }
+
+    .down{
+        width: 100%;
+        margin-bottom: .5rem;
+        display: flex;
+        // justify-content: space-around;
+
+        flex-wrap: wrap;
+        align-items: center;
+        // height: 7rem;
+        .bookItem{
+            width: 40%;
+            margin-left: 6.5%;
+            height: 13rem;
+            margin-bottom: .5rem;
+            border: 1px solid #ccc;
+            dl{
+                width: 100%;
+                height: 13rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                dt{
+                    width: 5rem;
+                    height: 6rem;
+                    .bl_img{
+                        width: 100% !important;
+                        height: 100% !important;
+                    }
+                }
+                dd{
+                    width: 100%;
+                    height: 6rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-items: center;
+                    p{
+                        height: 1.2rem;
+                        line-height: 1.2rem;
+                        text-align: left;
+                        font-size: .7rem;
+                        color: rgb(252, 93, 93);
+                        span{
+                            // display: block;
+                            // width: 100%;
+                            height: 1.1rem;
+                            line-height: 1.1rem;
+                            text-align: left;  
+                            font-size: .6rem;
+                            color: rgb(82, 80, 80);
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 1;
+                            -webkit-box-orient: vertical;
+                            // color: rgb(82, 80, 80);
+                        }
+                        &:nth-child(1){
+                            span{
+                                font-weight: bold;
+                            }
+                        }
+                        &:nth-child(4){
+                            span{
+                                display: block;
+                                background-color: rgb(250, 235, 216);
+                                color: rgb(235, 82, 35);
+                                border-radius: .5rem;
+                                text-align: center;
+                                width: 3rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .alert{
+            width: 100%;
+            height: 1rem;
+            line-height: 1rem;
+            font-size: .7rem;
+            text-align: center;
+            color: rgb(133, 129, 129);
+        }
+    }
+   
+}
+}
+.empty{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}

@@ -1,0 +1,199 @@
+.index{
+    height: 100%;
+    width: 100%;
+    // position: relative;
+    .searchBar{// 搜索框
+        height: 2.4rem;
+        width: 100%;
+        padding: 0.3rem .5rem;
+        background-color: bisque;
+        box-sizing: border-box;
+        .index_top{
+            width: 100%;
+            height: 100%;
+            // overflow: hidden;
+            line-height: 1.8rem;
+            font-size: 1.5rem;
+            .title{
+                font-size: 1rem
+            }
+            .search{
+                border-radius: 5px;
+                line-height: 1.6rem;
+                padding:0 .2rem;
+                box-sizing: border-box;
+                border: 1px solid #333;
+                box-shadow: 1px 1.5px 3px #000,2px 2px 5px #999 inset;
+            }
+            i{
+                font-size: 1rem
+            }
+        }
+    }
+    .content{//首页内容
+        width: 100%;
+        // height: 40rem;
+        box-sizing: border-box;
+        padding: 0 .5rem;
+        margin-top: .5rem;
+        // background-color: rgb(240, 222, 237);
+        // position: absolute;
+        // top: 2.4rem;
+        // left: 0;
+        .slider{// 图片轮播
+            height: 10rem;
+            width: 100%;
+        }
+        .hotClassify{// 首页热门分类
+            // height: 5rem;
+            width: 100%;
+            // background-color: rgb(158, 155, 155);
+            display: flex;
+            flex-wrap: wrap;
+            // justify-content: space-around;
+            align-items: center;
+            .hotClassify_item{
+                width: 30%;
+                height: 3rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin: .2rem;
+                .hi_img{
+                    height: 1.5rem;
+                    width: 1.5rem;
+                    // background-color: antiquewhite;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .hi_name{
+                    height: 1rem;
+                    line-height: 1rem;
+                    font-size: .6rem;
+                    color: #333;
+                }
+            }
+        }
+        .hotBooks{//首页热门书籍
+            width: 100%;
+            // background-color: rgb(243, 231, 212);
+            .hotBookLists{
+                height: 1.5rem;
+                width: 100%;
+                padding-left:.9rem;  
+                p{
+                    height: 1.5rem;
+                    line-height: 1.5rem;
+                    color: rgb(235, 117, 39);
+                    font-size: .8rem;
+                    font-weight: bold;
+                    text-align: left;
+                }
+            } 
+            .hotBookLists_item{
+                width: 100%;
+                // background-color: antiquewhite;
+                margin-bottom: .5rem;
+                .hi_up{
+                    width: 100%;
+                    height: 7rem;
+                    dl{
+                        width: 100%;
+                        height: 7rem;
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        dt{
+                            width: 6rem;
+                            height: 6rem;
+                            .bl_img{
+                                width: 100% !important;
+                                height: 100% !important;
+                            }
+                        }
+                        dd{
+                            width: 60%;
+                            height: 80%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            overflow: hidden;
+                            // align-items: center;
+                            p{
+                                // height: 1.5rem;
+                                line-height: 1rem;
+                                text-align: left;
+                                font-size: .7rem;
+                                color: #333;
+                                span{
+                                    // display: block;
+                                    text-align: left;  
+                                    font-size: .75rem;
+                                    color: #ff6666;
+                                }
+                                .booklisttitle{
+                                    display: block;
+                                    font-size: .8rem;
+                                    font-weight: bold;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    display: -webkit-box;
+                                    -webkit-line-clamp: 1;
+                                    -webkit-box-orient: vertical;
+
+                                }
+                                &:first-child{
+                                    span{
+                                        font-size: .85rem;
+                                        color: #666
+                                    }
+                                   
+                                }
+                            }
+
+                        }
+                    }
+                }
+                .hi_down{
+                    width: 100%;
+                    // height: 10rem;
+                    .hd_all{
+                        // height: 1.5rem;
+                        line-height: 1.5rem;
+                        text-align: left;
+                        font-size: .8rem;
+                        color: #333;
+                        .hd_inside{
+                            // height: 1.5rem;
+                            line-height: 1.5rem;
+                            text-align: left;  
+                            font-size: .7rem;
+                            color: rgb(129, 126, 125);
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 2;
+                            -webkit-box-orient: vertical;
+                        }
+                    }
+                }
+                .hr{
+                    height: .7rem;
+                    width: 100%;
+                    background-color: rgb(248, 244, 239);
+                    margin-top: .5rem;
+                }
+            }
+            
+        }
+    }
+    
+} 
+.empty{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}

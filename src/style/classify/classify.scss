@@ -1,0 +1,65 @@
+.classify{
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    overflow: auto;
+    
+    // 顶部导航
+    .topNav{
+        position: fixed;
+        left: 0;
+        top: 0;
+        overflow: hidden;
+        z-index: 999;
+        width: 100%;
+        height: 2rem;
+        padding: 0.2rem 0.5rem;
+        box-sizing: border-box;
+        box-shadow: 2px 1px 10px #999;
+        background-color: #fff;
+        z-index: 999;
+        li{
+            width: 25%;
+            float: left;
+            text-align: center;
+            line-height: 1.6rem;
+            // background-color: #333;
+            border-radius: 30px
+        }
+        .active{
+            background-color: deepskyblue;
+        }
+    }
+    .searchBar{// 搜索框
+        height: 2.4rem;
+        width: 100%;
+    }
+    .content{
+        width: 96%;
+        
+        margin: 0 2%;
+        margin-top: 2rem;
+        // background-color: rgb(240, 222, 237);
+        padding-bottom: 1rem;
+        // margin-top: 2.4rem;
+        .classify_items{
+            width: 100%;
+            // background-color: antiquewhite; 
+        }
+        .one-box{
+            width: 100%;
+            display: flex;
+            // justify-content: space-around;
+            flex-wrap: wrap;
+            
+        }
+        
+        
+    }
+
+}
+.empty{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
