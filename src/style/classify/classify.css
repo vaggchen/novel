@@ -16,7 +16,7 @@
   padding: 0.2rem 0.5rem;
   box-sizing: border-box;
   box-shadow: 2px 1px 10px #999;
-  background-color: #fff;
+  background-color: #fcf9f9;
   z-index: 999;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .classify .topNav .active {
-  background-color: deepskyblue;
+  background-color: #cbcccc;
 }
 
 .classify .searchBar {
