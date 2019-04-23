@@ -48,7 +48,7 @@
         
 
         <!-- 工具 -->
-        <div class="fixedDiv" id='readTool' v-show="toolsShow" @touchstart.stop='hideTool' @touchmove.stop="notClick">
+        <div class="fixedDiv" id='readTool' v-show="toolsShow" @tap.stop='hideTool' @touchmove.stop="notClick">
             
             <div id="setting" @touchstart.stop='notClick'>
                 <div>
@@ -104,9 +104,10 @@
                 </div>
             </div>
             <div class="botTool" @touchstart.stop='notClick'>
-                <div @touchstart.stop="changeReasource">
-                    <p><i class="iconfont icon-huanyuan"></i></p>
-                    <p>换源</p>
+                
+                <div @touchstart.stop="toMenu">
+                    <p><i class="iconfont icon-mulu"></i></p>
+                    <p>目录</p>
                 </div>
                 <div @touchstart.stop="changeModel">
                     <div v-show="!isDark">
@@ -118,9 +119,9 @@
                         <p>日间</p>
                     </div>
                 </div>
-                <div @touchstart.stop="toMenu">
-                    <p><i class="iconfont icon-mulu"></i></p>
-                    <p>目录</p>
+                <div @touchstart.stop="changeReasource">
+                    <p><i class="iconfont icon-huanyuan"></i></p>
+                    <p>换源</p>
                 </div>
             </div>
         </div>
@@ -208,7 +209,7 @@ export default {
                 startX: 0, //初始化时滚动至x
                 startY: 0, //初始化时滚动至y
                 indicators: true, //是否显示滚动条
-                deceleration:0.0006, //阻尼系数,系数越小滑动越灵敏
+                deceleration:0.0001, //阻尼系数,系数越小滑动越灵敏
                 bounce: true, //是否启用回弹
                 click:true
             },
@@ -317,7 +318,7 @@ export default {
                         this.chapterArr.push(res.chapter)
                         this.chapterDetail +='<div class="title">'+this.title+'</div>';
                         //去除所有空格
-                        let str = content.replace(/\s*/g,"\n");//生成新的字符串，并未对原字符串修改
+                        let str = content.replace(/\s/g,"\n");//生成新的字符串，并未对原字符串修改
 
                         this.chapterDetail +='&#12288;&#12288;'
             
@@ -331,7 +332,7 @@ export default {
                         // this.chapterArr.unshift(res.chapter)
                         // this.chapterDetail = '<div class="title">'+this.title+'</div>' +this.chapterDetail;
                         // //去除所有空格
-                        // let str = content.replace(/\s*/g,"\n");//生成新的字符串，并未对原字符串修改
+                        // let str = content.replace(/\s/g,"\n");//生成新的字符串，并未对原字符串修改
 
                         // this.chapterDetail +='&#12288;&#12288;'
             
@@ -346,16 +347,20 @@ export default {
                         this.chapterArr.push(res.chapter)
                         this.chapterDetail ='<div class="title">'+this.title+'</div>';
                         //去除所有空格
-                        let str = content.replace(/\s*/g,"\n");//生成新的字符串，并未对原字符串修改
+                        let str = content.replace(/\s/g,"\n");//生成新的字符串，并未对原字符串修改
 
                         this.chapterDetail +='&#12288;&#12288;'
-            
-                        if(str.indexOf('\n')!=-1 && str.indexOf('\n\n')==-1){
+
+                        //继续筛选
+                        let str2 = "";
+                        if(str.indexOf('\n\n')!=-1 && str.indexOf('\n\n')!=str.indexOf('\n\n\n\n')){
                             
-                            this.chapterDetail += str.replace(/\n/g,"<p></p>&#12288;&#12288;")
+                            str2 = str.replace(/\n\n/g,"<p></p>&#12288;&#12288;")
                         }else{
-                            this.chapterDetail += str.replace(/\n\n/g,"<p></p>&#12288;&#12288;")
+                            str2 = str.replace(/\n\n\n\n/g,"<p></p>&#12288;&#12288;")
                         }
+                        
+                        this.chapterDetail += str2
                     }
                     this.toast.hide()
                 }else if(res.ok && res.chapter.images){// 如果存在漫画图片
@@ -586,7 +591,7 @@ export default {
             if(param == 'Add'){
                 this.defaultText+=0.1
             }else if(param == 'return'){
-                this.defaultText=1;
+                this.defaultText=0.7;
             }else{
                 this.defaultText-=0.1;
             }

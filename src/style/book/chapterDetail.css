@@ -18,13 +18,9 @@
 }
 
 .chapterDetail .content .novelRead {
-  letter-spacing: -2px;
   box-sizing: border-box;
   padding: 0 .5rem;
-}
-
-.chapterDetail .content .novelRead p {
-  margin: .5rem 0;
+  font-size: .7rem;
 }
 
 .chapterDetail .content .picturesRead {
