@@ -6,12 +6,12 @@
     .head{
         height: 3rem;
         width: 100%;
-        background-color: rgb(253, 238, 219);
+        background-color: rgb(252, 249, 249);
         display: flex;
         justify-content: space-around;
         align-items: center;
         color: #666666;
-        
+        border-bottom: 2px solid #333;
         letter-spacing: .2rem;
         .left,.right{
             width: 6rem;

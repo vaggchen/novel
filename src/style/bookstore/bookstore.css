@@ -8,11 +8,12 @@
 .bookstore .head {
   height: 3rem;
   width: 100%;
-  background-color: #fdeedb;
+  background-color: #fcf9f9;
   display: flex;
   justify-content: space-around;
   align-items: center;
   color: #666666;
+  border-bottom: 2px solid #333;
   letter-spacing: .2rem;
 }
 
