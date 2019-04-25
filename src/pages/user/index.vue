@@ -48,9 +48,21 @@
                     <span>个人书架</span>
                     <i class="iconfont icon-right"></i>
                 </div>
-                <div class="myInfoItem myReading">
+                <div class="myInfoItem myReading" @click="setReadingTime()">
                     <span>阅读计时</span>
                     <i class="iconfont icon-right"></i>
+                </div>
+                <div class="readingTime" id="readingTime" style="display:none;">
+                    <select name="" id="">
+                        <option value="">请选择</option>
+                        <option value="30">30分钟</option>
+                        <option value="60">60分钟</option>
+                        <option value="90">90分钟</option>
+                        <option value="120">120分钟</option>
+                        <!-- <option value="" @click="toOtherTime()">其他</option> -->
+                    </select>
+                    <input type="text" value="" placeholder="手动输入时限">
+                    <button @click="setTime()">设置</button>
                 </div>
                 <div class="myInfoItem myStorage">
                     <span>我的历史</span>
@@ -79,6 +91,25 @@ export default {
         }
     },
     methods: {
+        // 设置阅读时间
+        setReadingTime(){
+            // 控制列表显隐
+        // showHide(){
+            var menu = document.getElementById("readingTime");
+            if(menu.style.display == "block"){
+                menu.style.display = "none";
+            }else{
+                menu.style.display = 'block';  
+            }
+        // },
+        },
+        setTime(){
+            
+        },
+        // 设置其他阅读时间
+        // toOtherTime(){
+
+        // },
         toLogin2 () {
             this.$store.dispatch('setTabBar',{
                 status:false,
@@ -89,9 +120,9 @@ export default {
                 status:false
             })
             this.$router.push({
-                name: 'login2',
+                name: 'login',
                 params: {
-                redirect: '/login2'
+                redirect: '/login'
                 },
                 query: {
                     myTitle: '登录'

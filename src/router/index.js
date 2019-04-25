@@ -39,14 +39,6 @@ export default new Router({
       component: resolve => require(['@/pages/user'], resolve)
     },
     {
-      path: '/login',
-      name: 'Login',
-      meta:{
-        keepAlive:true
-      },
-      component: resolve => require(['@/pages/user/login'], resolve)
-    },
-    {
       path: '/bookListItem',     
       name: 'bookListItem',
       meta:{
@@ -108,12 +100,12 @@ export default new Router({
       component: resolve => require(['@/pages/user/register'], resolve)
     },
     {
-      path: '/login2',
-      name: 'login2',
+      path: '/login',
+      name: 'login',
       meta:{
         keepAlive:true
       },
-      component: resolve => require(['@/pages/user/login2'], resolve)
+      component: resolve => require(['@/pages/user/login'], resolve)
     },
   ]
 })

@@ -110,9 +110,9 @@ export default {
             status:false
         })
         this.$router.push({
-            name: 'login2',
+            name: 'login',
             params: {
-            redirect: '/login2'
+            redirect: '/login'
             }
         })
       }

@@ -40,7 +40,6 @@ export default {
     },
     watch:{
         '$route'(newsVal,oldval){
-            
             // if(oldVal.name == 'chapterDetail' && newsVal.name == 'BookStore'){
             //     this.$store.dispatch('setTopShow',false)
             // }
