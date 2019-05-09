@@ -139,6 +139,10 @@
   background-color: #969696;
 }
 
+.bookstore .readingTime .normal {
+  height: 1.2rem;
+}
+
 .bookstore .readingTime .normal:hover {
   background-color: #c4c1c1;
   color: #383838;

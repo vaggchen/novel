@@ -6,8 +6,8 @@
                 <span>阅读模式</span>
             </div>
             <div class="readingTime" id="readingTime" style="display:none;">
-                    <div class="normal">普通模式</div>
-                    <cube-button class="setTime" @click="showMinPicker"> 定时模式</cube-button> 
+                    <div class="normal" @click="clickNormal">普通模式</div>
+                    <div class="normal timinal"><cube-button class="setTime" @click="showMinPicker"> 定时模式</cube-button></div>
             </div>
             <BookItem /><!-- 书架书籍/////需要接口 -->
         </div>
@@ -128,11 +128,22 @@ export default {
             this.clock(selectedTime)
             },
             cancelHandler() {
-            this.$createToast({
-                type: 'correct',
-                txt: 'Picker canceled',
-                time: 1000
-            }).show()
+                document.getElementById("readingTime").style.display = "none"
+                this.$createToast({
+                    type: 'correct',
+                    txt: '取消选择定时模式',
+                    time: 1000
+                }).show()
+        },
+
+        // 普通模式
+        clickNormal(){
+             this.$createDialog({
+                type: 'warn',
+                // title: `selected time: ${selectedTime}`,
+                content: `普通模式`,
+                icon: 'cubeic-alert'
+                }).show()
         }
     },
     watch:{
