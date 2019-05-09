@@ -15,7 +15,7 @@ export default new Router({
       component: resolve => require(['@/pages/index'], resolve)
     },
     {
-      path: '/classify',
+      path: '/classify', 
       name: 'Classify',
       meta:{
         keepAlive:true

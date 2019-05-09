@@ -1,4 +1,3 @@
-
 <template>
     <div class="user">
         <!-- <cube-button @click="toLogin">登录</cube-button> -->
@@ -18,13 +17,13 @@
         </div>
         <div class="content">
             <div class="userInfo">
-                <dl v-if="isLogin">
+                <dl v-if="isLoginsuc">
                     <dt>
                         <img :src="unloginimg" alt="">
                     </dt>
                     <dd>
-                        <div class="name"><span>用户名</span></div>
-                        <div class="age"><span>16岁</span></div>
+                        <div class="name"><span>{{username}}</span></div>
+                        <!-- <div class="age"><span>16岁</span></div> -->
                     </dd>
                 </dl>
                 <dl v-else>
@@ -32,7 +31,7 @@
                         <i class="iconfont icon-weidenglu"></i>
                     </dt>
                     <dd>
-                        <div @click="toLogin2" class="unlog"><span>登录/注册</span></div>
+                        <div @click="toLogin" class="unlog"><span>登录/注册</span></div>
                         <!-- <div>年龄：</div> -->
                     </dd>
                 </dl>
@@ -48,7 +47,7 @@
                     <span>个人书架</span>
                     <i class="iconfont icon-right"></i>
                 </div>
-                <div class="myInfoItem myReading" @click="setReadingTime()">
+                <!-- <div class="myInfoItem myReading" @click="setReadingTime()">
                     <span>阅读计时</span>
                     <i class="iconfont icon-right"></i>
                 </div>
@@ -59,23 +58,26 @@
                         <option value="60">60分钟</option>
                         <option value="90">90分钟</option>
                         <option value="120">120分钟</option>
-                        <!-- <option value="" @click="toOtherTime()">其他</option> -->
                     </select>
                     <input type="text" value="" placeholder="手动输入时限">
                     <button @click="setTime()">设置</button>
-                </div>
+                </div> -->
                 <div class="myInfoItem myStorage">
                     <span>我的历史</span>
                     <i class="iconfont icon-right"></i>
                 </div>
-                <div class="myInfoItem setting">
+                <div class="myInfoItem setting" @click="modelchange()">
                     <span>设置</span>
                     <i class="iconfont icon-right"></i>
                 </div>
+                <div class="mysetting" id="mysetting" style="display:none;">
+                    <cube-radio-group v-model="selected" :options="options" />
+                    <button @click="setModel()">设置</button>
+                </div>
             </div>
-
-            <div class="logout" v-show="isLogin">
-                <div class="out">退出登录</div>
+ 
+            <div class="logout" v-show="isLoginsuc">
+                <div class="out" @click="logout">退出登录</div>
             </div>
         </div>
     </div>
@@ -83,34 +85,102 @@
 
 <script>
 export default {
-    name: 'User',
+    name: 'user',
     data() {
         return {
-        isLogin : false,
-        unloginimg: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=868917665,2584152645&fm=26&gp=0.jpg'
+        // isLogin : true,
+        isLoginsuc : false,
+        unloginimg: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=868917665,2584152645&fm=26&gp=0.jpg',
+        username: '',
+        selected: '',
+        options: ['普通模式', '计时模式']
         }
     },
-    methods: {
-        // 设置阅读时间
-        setReadingTime(){
-            // 控制列表显隐
-        // showHide(){
-            var menu = document.getElementById("readingTime");
-            if(menu.style.display == "block"){
-                menu.style.display = "none";
+    created() {
+        this.init()
+       
+    },
+    methods: { 
+        init(){
+            console.log(this.$route.query)
+            console.log(this.isLoginsuc)
+            this.username = this.$route.query.username;
+            if(this.username==''||this.username==undefined){
+                this.isLoginsuc=false
             }else{
-                menu.style.display = 'block';  
+                this.isLoginsuc=true
+                let userisAlive = Utils.localLoadJsonStorage('globalLoginStatus') || false;
+                userisAlive = true
+                Utils.localSaveJsonStorage('globalLoginStatus', userisAlive);
             }
-        // },
+            console.log(this.isLoginsuc)
         },
-        setTime(){
+        // 设置阅读时间
+        // setReadingTime(){
+        //     // 控制列表显隐
+        // // showHide(){
+        //     var hide = this.isLoginsuc;
+        //     var menu = document.getElementById("readingTime");
+        //     if(hide){
+        //         if(menu.style.display == "block"){
+        //             menu.style.display = "none";
+        //         }else{
+        //             menu.style.display = 'block';  
+        //         }
+        //     }else{
+        //         setTimeout(() => {
+        //         this.toast = this.$createToast({
+        //             txt: '请先登录哦',
+        //             type:'warn',
+        //             mask: true,
+        //             time:1000
+        //         })
+        //         this.toast.show()
+        //         },100)
+        //     }
             
+        // // },
+        // },
+        // setTime(){        
+        // },
+        modelchange(){
+            var hide = this.isLoginsuc;
+            var menu = document.getElementById("mysetting");
+            if(hide){
+                if(menu.style.display == "block"){
+                    menu.style.display = "none";
+                }else{
+                    menu.style.display = 'block';  
+                }
+            }else{
+                setTimeout(() => {
+                this.toast = this.$createToast({
+                    txt: '请先登录哦',
+                    type:'warn',
+                    mask: true,
+                    time:1000
+                })
+                this.toast.show()
+                },100)
+            }
         },
         // 设置其他阅读时间
         // toOtherTime(){
 
         // },
-        toLogin2 () {
+        // 退出登录
+        logout(){
+            this.isLoginsuc=false;
+            let arr = Utils.localLoadJsonStorage('users').map(item =>{
+                if(item.isLogin==true){
+                    item.isLogin=false
+                }
+                return item
+             })
+            console.log(arr)
+            Utils.localSaveJsonStorage('users', arr);
+        },
+        toLogin () {
             this.$store.dispatch('setTabBar',{
                 status:false,
                 msg: '登录'

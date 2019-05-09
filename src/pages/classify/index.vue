@@ -131,6 +131,9 @@ export default {
         },
 
     },
+    // activated() {
+    //     this.init()
+    // },
     created(){
         this.init()
     },

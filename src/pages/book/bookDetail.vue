@@ -9,9 +9,9 @@
                 v-if="showornot"
                 >
         <!-- 书籍详情 -->
-        <div class="content">
+        <div class="content"> 
             <!--书籍信息  -->
-            <!-- <div class="up_title tt">
+            <!-- <div class="up_title tt"> 
                 书籍信息
             </div> -->
             <div class="up">
@@ -149,7 +149,6 @@ export default {
     },
     created() {
         // console.log(this.$route.query.id)
-        
         this.init(); 
     },
     methods: {
@@ -238,7 +237,6 @@ export default {
                         this.toast.show()
                     }                  
                     // console.log(this.firstchapters)
-                    
                 })
                 }else{
                     this.toast1 = this.$createToast({

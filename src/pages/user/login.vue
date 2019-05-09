@@ -58,67 +58,76 @@ export default {
       let username = document.getElementById('username').value;
       let password = document.getElementById('password').value;
       let arr = Utils.localLoadJsonStorage('users')
-      console.log(username,password)
       console.log(arr)
-      if(username!=null&&password!=null){
-        
-        //  console.log(arr)
-        /*let loginStatus = arr.map((item)=>{
-          if(username!==item.username){
-            setTimeout(() => {
-              this.toast4 = this.$createToast({
-                  txt: '该用户不存在',
-                  type:'warn',
-                  mask: true,
-                  time:1000
-              })
-              this.toast4.show()
-            },100)
-          }else if(username===item.username&&password===item.password){
-            setTimeout(() => {
-              this.toast5 = this.$createToast({
-                  txt: '登录成功',
-                  type:'warn',
-                  mask: true,
-                  time:1000
-              })
-              this.toast5.show()
-            },100)
-            return true
-          }else{
-            setTimeout(() => {
-              this.toast6 = this.$createToast({
-                  txt: '用户名或密码错误',
-                  type:'warn',
-                  mask: true,
-                  time:1000
-              })
-              this.toast6.show()
-            },100)
-          }
+      let loginsuccess = arr.some(item =>{
+        if(username != item.username||password != item.password){
+          return false
+        }else if(username == item.username && password == item.password){
+          item.isLogin=true
+          return true
+        }
+      })
+      console.log(arr)
+      Utils.localSaveJsonStorage('users', arr);
+      if(loginsuccess){
+        this.$store.dispatch('setTabBar',{
+            status:true,
+            // msg: '我的'
         })
-        console.log(loginStatus)*/
+        //隐藏tabBar
+        this.$store.dispatch('setTopnav',{
+            status:true
+        })
+        this.$router.push({
+            name: 'User',
+            params: {
+            redirect: '/user'
+            },
+            query: {
+                myTitle: '我的',
+                username: username
+            }
+        })
+      }else{
+        this.toast1 = this.$createToast({
+              txt: '用户名或密码输入错误',
+              mask: true,
+              type:'warn',
+              time:3000
+          })
+          this.toast1.show()
+      }
+      // 用户名密码不为空
+      if(username==null||password==null||username==''||password==''){
+         this.toast = this.$createToast({
+              txt: '用户名和密码不能为空',
+              mask: true,
+              type:'warn',
+              time:3000
+          })
+          this.toast.show()
+        // this.isLogin=true
       }
     },
     toRegister () {
-            this.$store.dispatch('setTabBar',{
-                status:false,
-                msg: '注册'
-            })
-            //隐藏tabBar
-            this.$store.dispatch('setTopnav',{
-                status:false
-            })
-            this.$router.push({
-                name: 'register',
-                params: {
-                redirect: '/register'
-                },
-                query: {
-                    myTitle: '注册'
-                }
-            })
-        },
+      this.$store.dispatch('setTabBar',{
+          status:false,
+          msg: '注册'
+      })
+      //隐藏tabBar
+      this.$store.dispatch('setTopnav',{
+          status:false
+      })
+      this.$router.push({
+          name: 'register',
+          params: {
+          redirect: '/register'
+          },
+          query: {
+              myTitle: '注册'
+          }
+      })
+    },
   }
 }
 </script>

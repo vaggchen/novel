@@ -3,9 +3,9 @@
     <!-- <login-header></login-header> -->
     <div class="register-title">
       <h3>注册新用户</h3>
-    </div>
+    </div> 
     <div class="register-input">
-      <label class="register-input-username" @change="compareUserName"><span>账号：</span><input class="username" id="username" type="text" placeholder="请输入手机号/邮箱/昵称"></label>
+      <label class="register-input-username" @change="compareUserName"><span>账号：</span><input class="username" id="username" type="text" placeholder="请输入昵称"></label>
       <label class="register-input-password"><span>密码：</span><input class="password" id="password" type="text" placeholder="请输入密码"></label>
       <label class="register-input-password" @change="comparePassword"><span>确认：</span><input class="password" id="compassword" type="text" placeholder="请再次输入密码"></label>
       <label class="register-input-check"><label class="label"><input type="checkbox"><i>✓</i></label><span>同意</span>《XXXXXX》<span>和</span>《XXXXXX》</label>
@@ -26,30 +26,34 @@ export default {
     compareUserName(){
       let username = document.getElementById('username').value;
       let arr = Utils.localLoadJsonStorage('users') || [];
-      let isAlive= arr.map((item)=>{
-        if(username == item.username){
-          setTimeout(() => {
-              this.toast4 = this.$createToast({
-                  txt: '已存在该用户，请重新键入',
-                  type:'warn',
-                  mask: true,
-                  time:1000
-              })
-              this.toast4.show()
-          },100)
-          return true
-        }else if(username == null || username == undefined){
-          setTimeout(() => {
-              this.toast5 = this.$createToast({
-                  txt: '用户名不能为空',
-                  type:'warn',
-                  mask: true,
-                  time:1000
-              })
-              this.toast5.show()
-          },100)
-        }
-      })
+      console.log(username)
+      console.log(arr)
+      if(arr){
+        let isAlive= arr.map((item)=>{
+          if(username == item.username){
+            setTimeout(() => {
+                this.toast4 = this.$createToast({
+                    txt: '已存在该用户，请重新键入',
+                    type:'warn',
+                    mask: true,
+                    time: 1000
+                })
+                this.toast4.show()
+            },100)
+            return true
+          }else if(username == null || username == undefined){
+            setTimeout(() => {
+                this.toast5 = this.$createToast({
+                    txt: '用户名不能为空',
+                    type:'warn',
+                    mask: true,
+                    time:1000
+                })
+                this.toast5.show()
+            },100)
+          }
+        })
+      }
     },
     comparePassword(){
       let password = document.getElementById('password').value;
@@ -96,7 +100,8 @@ export default {
                 arr.push({
                   username: username,
                   password: password,
-                  id: id
+                  id: id,
+                  isLogin: false
                 })
                 console.log(arr)
                 Utils.localSaveJsonStorage('users', arr);

@@ -60,9 +60,28 @@ export default {
         }
     },
     created() {
-        this.init()
+        // this.init()
+        this.loginornot
     },
     methods: {
+        loginornot(){
+            let userisAlive = Utils.localLoadJsonStorage('globalLoginStatus')
+            hide = userisAlive
+            if(!hide){
+            // }else{
+                setTimeout(() => {
+                this.toast = this.$createToast({
+                    txt: '请先登录哦',
+                    type:'warn',
+                    mask: true,
+                    time:1000
+                })
+                this.toast.show()
+                },100)
+            }else{
+                init()
+            }
+        },
         init(){
             this.toast = this.$createToast({
                 txt: '书架书籍拉取中',
@@ -78,7 +97,6 @@ export default {
                 this.books = arr;
                 // 将按钮添加到每一本书               
                 arr.forEach(element => {
-                    
                     let obj = {
                         item:element,
                         btns: [
@@ -194,7 +212,7 @@ export default {
             // console.log(link)
             let title = item.title
             this.$store.dispatch('setTabBar',{
-                status:false,
+                status:false, 
                 msg:item.title
             })
             //隐藏tabBar

@@ -240,6 +240,7 @@ export default {
         
     },
     created() {
+    // activated() {
         this.sort = this.$route.query.sort;
         
         this.$store.dispatch('setTopShow',false)

@@ -112,6 +112,7 @@ export default {
         },
     },
     created(){
+    // activated() {
         console.log(this.$route.query)
         
         this.childstatistics()
