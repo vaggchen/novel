@@ -60,28 +60,28 @@ export default {
         }
     },
     created() {
-        // this.init()
-        this.loginornot
+        this.init()
+        // this.loginornot
     },
     methods: {
-        loginornot(){
-            let userisAlive = Utils.localLoadJsonStorage('globalLoginStatus')
-            hide = userisAlive
-            if(!hide){
-            // }else{
-                setTimeout(() => {
-                this.toast = this.$createToast({
-                    txt: '请先登录哦',
-                    type:'warn',
-                    mask: true,
-                    time:1000
-                })
-                this.toast.show()
-                },100)
-            }else{
-                init()
-            }
-        },
+        // loginornot(){
+        //     let userisAlive = Utils.localLoadJsonStorage('globalLoginStatus')
+        //     hide = userisAlive
+        //     if(!hide){
+        //     // }else{
+        //         setTimeout(() => {
+        //         this.toast = this.$createToast({
+        //             txt: '请先登录哦',
+        //             type:'warn',
+        //             mask: true,
+        //             time:1000
+        //         })
+        //         this.toast.show()
+        //         },100)
+        //     }else{
+        //         this.init()
+        //     }
+        // },
         init(){
             this.toast = this.$createToast({
                 txt: '书架书籍拉取中',

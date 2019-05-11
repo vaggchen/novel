@@ -6,8 +6,8 @@
                 <span>阅读模式</span>
             </div>
             <div class="readingTime" id="readingTime" style="display:none;">
-                    <div class="normal" @click="clickNormal">普通模式</div>
-                    <div class="normal timinal"><cube-button class="setTime" @click="showMinPicker"> 定时模式</cube-button></div>
+                    <div class="normal"><cube-button class="setTime" @click="clickNormal">普通模式</cube-button></div>
+                    <div class="normal"><cube-button class="setTime" @click="showMinPicker"> 定时模式</cube-button></div>
             </div>
             <BookItem /><!-- 书架书籍/////需要接口 -->
         </div>
@@ -36,6 +36,8 @@ export default {
     },
     methods: {        
         initHeight(){
+            // router.go(0)
+            // this.window.reload()
             let islog = Utils.localLoadJsonStorage('globalLoginStatus')
             console.log(islog)
             this.isLoginsuc=islog
@@ -62,6 +64,7 @@ export default {
             console.log(time)
             let now=new Date().getTime()
             let during=time-now;
+            console.log(during)
             if(during==600){
                 // console.log(now)
                 this.$createDialog({
@@ -79,27 +82,52 @@ export default {
                 icon: 'cubeic-alert'
                 }).show()
                 // console.log(now)
-            }else if(during==0){
+            }else if(during<=0){
                 this.$createDialog({
                 type: 'warn',
                 // title: `selected time: ${selectedTime}`,
                 content: `您的阅读时限已到，即将退出阅读`,
                 icon: 'cubeic-alert'
                 }).show()
+                document.getElementsByTagName("BookItem")[0].style.display = "none"
+                console.log(document.getElementsByTagName("BookItem"))
                 this.back()
             }
 
         },
         // 退出阅读
         back(){
+            document.getElementsByTagName("BookItem")[0].style.display = "none"
+            console.log(document.getElementsByTagName("BookItem"))
             let islog = Utils.localLoadJsonStorage('globalLoginStatus')
             islog=false
             Utils.localSaveJsonStorage('globalLoginStatus', islog);
+            // this.isLoginsuc=false;
+            let arr = Utils.localLoadJsonStorage('users').map(item =>{
+                if(item.isLogin==true){
+                    item.isLogin=false
+                }
+                return item
+             })
+            console.log(arr)
+            Utils.localSaveJsonStorage('users', arr);
             // 登出操作
-            this.$router.push({
-                name: 'Login',
+            this.$store.dispatch('setTabBar',{
+                status:true,
+                // msg: '我的'
+            })
+            // 隐藏tabBar
+            this.$store.dispatch('setTopnav',{
+                status:true
+            })
+            this.$router.replace({
+                name: 'User',
                 params: {
-                    redirect: '/login'
+                redirect: '/user'
+                },
+                query: {
+                    myTitle: '我的',
+                    username: username
                 }
             })
         },
@@ -124,8 +152,10 @@ export default {
                 content: `开始为您进行阅读计时了哦，您能够阅读到: ${formatedTime}`,
                 icon: 'cubeic-alert'
             }).show()
+            document.getElementById("readingTime").style.display = "none"
             // 开始计时
-            this.clock(selectedTime)
+            setInterval(this.clock(selectedTime),1000)
+            // this.clock(selectedTime)
             },
             cancelHandler() {
                 document.getElementById("readingTime").style.display = "none"

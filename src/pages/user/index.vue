@@ -102,10 +102,19 @@ export default {
     },
     methods: { 
         init(){
+            let arr = Utils.localLoadJsonStorage('users')
+            console.log(arr)
+            // let loguser = arr.some(item =>{
+            //     if(item.isLogin==true){
+            //     // item.isLogin=true
+            //     return item
+            //     }
+            // })
+            // console.log(loguser)
             console.log(this.$route.query)
             console.log(this.isLoginsuc)
-            this.username = this.$route.query.username;
-            if(this.username==''||this.username==undefined){
+            this.username = this.$route.query.username||arr[0].username;
+            if(this.username==''||this.username==undefined||arr[0].isLogin==false){
                 this.isLoginsuc=false
             }else{
                 this.isLoginsuc=true
@@ -115,34 +124,6 @@ export default {
             }
             console.log(this.isLoginsuc)
         },
-        // 设置阅读时间
-        // setReadingTime(){
-        //     // 控制列表显隐
-        // // showHide(){
-        //     var hide = this.isLoginsuc;
-        //     var menu = document.getElementById("readingTime");
-        //     if(hide){
-        //         if(menu.style.display == "block"){
-        //             menu.style.display = "none";
-        //         }else{
-        //             menu.style.display = 'block';  
-        //         }
-        //     }else{
-        //         setTimeout(() => {
-        //         this.toast = this.$createToast({
-        //             txt: '请先登录哦',
-        //             type:'warn',
-        //             mask: true,
-        //             time:1000
-        //         })
-        //         this.toast.show()
-        //         },100)
-        //     }
-            
-        // // },
-        // },
-        // setTime(){        
-        // },
         modelchange(){
             var hide = this.isLoginsuc;
             var menu = document.getElementById("mysetting");

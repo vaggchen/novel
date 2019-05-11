@@ -74,11 +74,11 @@ export default {
             status:true,
             // msg: '我的'
         })
-        //隐藏tabBar
+        // 隐藏tabBar
         this.$store.dispatch('setTopnav',{
             status:true
         })
-        this.$router.push({
+        this.$router.replace({
             name: 'User',
             params: {
             redirect: '/user'

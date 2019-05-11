@@ -97,14 +97,10 @@
         right: .8rem;
     }
     .readingTime{
-        // position: absolute;
-        // top: 3rem;
-        // right: .3rem; 
-        // width: 8rem;
-        // height: 3rem;
         display: none;
         width: 5rem;
         position: absolute;
+        height: 3rem;
         top: 2.4rem;
         right: 0.3rem;
         background-color: rgb(150, 150, 150);
@@ -125,18 +121,23 @@
             border-bottom: .5rem solid rgb(155, 155, 155);
             z-index: 999;
         }
-        div, .setTime{
+        .setTime{
             color: rgb(255, 255, 255);
             width: 100%;
-            box-sizing: border-box;
-            padding: 2% 2%;
+            // box-sizing: border-box;
+            padding: 1% 1%;
             text-align: center;
             font-size: .6rem;
             background-color: rgb(150, 150, 150);
-            
+            &:hover{
+                background-color: rgb(214, 213, 213);
+                color:  rgb(37, 37, 37);
+            }
+
         }
         .normal{
             height: 1.2rem;
+            // widows: 80%;
             &:hover{
                 background-color: rgb(196, 193, 193);
                 color:  rgb(56, 56, 56);
